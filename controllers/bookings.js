@@ -4,7 +4,7 @@ const router = express.Router()
 
 // Views
 // Create here a controller that accepts GET requests and renders the "search" page
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   res.send('This is bookings ')
 })
 // Export
