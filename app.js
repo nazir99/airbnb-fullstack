@@ -45,6 +45,23 @@ mongoose.connect(
 require('./express-sessions')(app)
 
 // Routes
+///// Routes '/'
+app.use('/', require('./controllers/index'))
+
+///// Routes 'auth'
+app.use('/auth', require('./controllers/auth'))
+
+///// Routes 'bookings'
+app.use('/bookings', require('./controllers/bookings'))
+
+///// Routes 'houses'
+app.use('/houses', require('./controllers/houses'))
+
+///// Routes 'profile'
+app.use('/profile', require('./controllers/profile'))
+
+///// Routes 'reviews'
+app.use('/reviews', require('./controllers/reviews'))
 
 // ::::
 // Create your routes here
