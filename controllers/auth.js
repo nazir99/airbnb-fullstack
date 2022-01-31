@@ -8,11 +8,11 @@ router.get('/', (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-  res.send('this is Auth')
+  res.render('login')
 })
 
 router.get('/signup', (req, res) => {
-  res.send('this is Auth')
+  res.render('signup')
 })
 
 router.get('/logout', (req, res) => {
