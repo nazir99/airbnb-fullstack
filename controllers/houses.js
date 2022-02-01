@@ -36,7 +36,8 @@ router.get('/:id/edit', (req, res) => {
 
 router.post('/', (req, res) => {
   if (req.isAuthenticated()) {
-    res.render('/')
+    console.log(req.body)
+    // res.render('/')
   } else {
     res.redirect('/auth/login')
   }
