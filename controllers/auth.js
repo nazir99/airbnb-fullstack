@@ -2,6 +2,9 @@
 const express = require('express')
 const router = express.Router()
 
+//Models
+const Users = require('../models/users')
+
 // Views
 router.get('/', (req, res) => {
   res.send('this is Auth')
@@ -27,10 +30,8 @@ router.post('/login', async (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {
-  console.log(req.body)
-  // const results = await Results.find({})
-  // await console.log(results)
-  // res.render('results', { results })
+  let user = await Users.create(req.body)
+  console.log({ user })
 })
 // Export
 module.exports = router

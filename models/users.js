@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 // Create the results moodel
 //
-module.exports = mongoose.model('houses', {
+module.exports = mongoose.model('users', {
   avatar: {
     type: String
   },
