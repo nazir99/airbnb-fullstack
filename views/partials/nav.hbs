@@ -1,3 +1,5 @@
+
+{{#if user}}
 <nav class="navbar navbar-light bg-light">
       <div class="container-xxl">
         <a class="navbar-brand" href="#">
@@ -14,11 +16,30 @@
           <button type="button" class="btn btn-outline-secondar">
             <img
               class="avatar"
-              src="https://randomuser.me/api/portraits/men/11.jpg"
+              src="{{user.avatar}}"
               alt=""
-            />Tony Russo
+            /> {{user.name}}
           </button>
 					<a class="btn btn-outline-secondary" href="/auth/logout">Log Out</a>
         </div>
       </div>
     </nav>
+{{else}}
+<nav class="navbar navbar-light bg-light">
+      <div class="container-xxl">
+        <a class="navbar-brand" href="#">
+          <img
+            class="airbnblogo"
+            src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png"
+            alt=""
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <div>
+					<a class="btn btn-outline-secondary" href="/auth/login">Log In</a>
+        </div>
+      </div>
+    </nav>
+{{/if}}
