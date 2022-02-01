@@ -19,14 +19,39 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/logout', (req, res) => {
-  res.send('this is post')
+  req.logout()
+  req.session.destroy(err => {
+    if (err) {
+      next(err)
+    }
+    res.clearCookie('connect.sid')
+    // continue coding here
+    res.redirect('/auth/login')
+  })
 })
 
-router.post('/login', async (req, res) => {
-  console.log(req.body)
-  // const results = await Results.find({})
-  // await console.log(results)
-  // res.render('results', { results })
+router.post('/login', async (req, res, next) => {
+  try {
+    let userWithEmailAndPasswordFound = await Users.findOne({
+      email: req.body.email,
+      password: req.body.password
+    })
+    console.log({ userWithEmailAndPasswordFound })
+
+    if (userWithEmailAndPasswordFound) {
+      req.login(userWithEmailAndPasswordFound, err => {
+        if (err) {
+          throw err
+        }
+        // continue coding here
+        res.redirect('/houses')
+      })
+    } else {
+      throw new Error('Incorrect Email and Password')
+    }
+  } catch (err) {
+    next(err)
+  }
 })
 
 router.post('/signup', async (req, res, next) => {

@@ -9,19 +9,35 @@ router.get('/', (req, res) => {
 })
 
 router.get('/create', (req, res) => {
-  res.render('houses/create')
+  if (req.isAuthenticated()) {
+    res.render('houses/create')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 router.get('/:id', (req, res) => {
-  res.render('houses/one')
+  if (req.isAuthenticated()) {
+    res.render('houses/one')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 router.get('/:id/edit', (req, res) => {
-  res.render('houses/edit')
+  if (req.isAuthenticated()) {
+    res.render('houses/edit')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 router.post('/', (req, res) => {
-  res.send('This is bookings ')
+  if (req.isAuthenticated()) {
+    res.render('/')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 router.patch('/:id', (req, res) => {
@@ -29,7 +45,11 @@ router.patch('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  res.send('This is bookings ')
+  if (req.isAuthenticated()) {
+    res.send('This is bookings ')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 
 // Export
