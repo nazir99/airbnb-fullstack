@@ -19,11 +19,11 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/logout', (req, res) => {
-  res.send('this is Auth')
+  res.send('this is post')
 })
 
 router.post('/login', async (req, res) => {
-  // console.log(req.body.search)
+  console.log(req.body)
   // const results = await Results.find({})
   // await console.log(results)
   // res.render('results', { results })
