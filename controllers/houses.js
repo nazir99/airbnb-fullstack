@@ -5,19 +5,19 @@ const router = express.Router()
 // Views
 // Create here a controller that accepts GET requests and renders the "search" page
 router.get('/', (req, res) => {
-  res.send('this is houses')
+  res.render('houses/list')
 })
 
 router.get('/create', (req, res) => {
-  res.send('this is houses')
+  res.render('houses/create')
 })
 
 router.get('/:id', (req, res) => {
-  res.send('this is houses')
+  res.render('houses/one')
 })
 
-router.get('/:id:edit', (req, res) => {
-  res.send('this is houses')
+router.get('/:id/edit', (req, res) => {
+  res.render('houses/edit')
 })
 
 router.post('/', (req, res) => {

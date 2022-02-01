@@ -4,12 +4,13 @@
           src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png"
           alt="Airbnb Logo"
         />
-        <form class="" action="index.html" method="post">
+        <form class="" action="/auth/signup" method="post">
           <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label"
               >Your Full Name</label
             >
             <input
+							name = "name"
               type="text"
               class="form-control"
               id="formGroupExampleInput"
@@ -19,7 +20,8 @@
           <label for="formFile" class="form-label">Profile Picture</label>
           <div class="mb-1">
             <input
-              class="form-control"
+						  name: "avatar"
+							class="form-control"
               type="url"
               id="formFile"
               placeholder="https://..."
@@ -27,10 +29,12 @@
             />
 
             <div class="mb-3">
-              <label for="formGroupExampleInput" class="form-label"
-                >Email</label
-              >
-              <input
+              <label for="formGroupExampleInput" class="form-label">
+								Email
+							</label>
+							<input
+
+								name = "email"
                 type="email"
                 class="form-control"
                 id="formGroupExampleInput"
@@ -38,17 +42,18 @@
               />
             </div>
             <div class="mb-3">
-              <label for="formGroupExampleInput2" class="form-label"
-                >Password</label
-              >
+              <label for="formGroupExampleInput2" class="form-label">
+								Password
+								</label>
               <input
                 type="password"
                 class="form-control"
                 id="formGroupExampleInput2"
                 placeholder=""
+								name="password"
               />
             </div>
-            <button type="button" class="btn btn-success mb-3">Sign Up</button>
+            <button class="btn btn-success mb-3">Sign Up</button>
             <div class="mb-3">
               <span
                 >Already have an Account? <a href="Login.html">Login</a>

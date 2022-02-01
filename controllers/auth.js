@@ -20,17 +20,17 @@ router.get('/logout', (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-  console.log(req.body.search)
-  const results = await Results.find({})
-  await console.log(results)
-  res.render('results', { results })
+  // console.log(req.body.search)
+  // const results = await Results.find({})
+  // await console.log(results)
+  // res.render('results', { results })
 })
 
 router.post('/signup', async (req, res) => {
-  console.log(req.body.search)
-  const results = await Results.find({})
-  await console.log(results)
-  res.render('results', { results })
+  console.log(req.body)
+  // const results = await Results.find({})
+  // await console.log(results)
+  // res.render('results', { results })
 })
 // Export
 module.exports = router
