@@ -29,9 +29,31 @@ router.post('/login', async (req, res) => {
   // res.render('results', { results })
 })
 
-router.post('/signup', async (req, res) => {
-  let user = await Users.create(req.body)
-  console.log({ user })
+router.post('/signup', async (req, res, next) => {
+  try {
+    // code here
+    // 1 check that user is not in db
+    let user = await Users.create(req.body)
+    // LOG user
+    console.log({ user })
+    // if user
+    // 1. login
+    // 2. redirect
+    // else
+    // throw error
+    req.login(user, err => {
+      if (err) {
+        throw err
+      }
+      // continue coding here
+      res.redirect('/houses')
+    })
+    // errors
+    // throw new Error('message')
+  } catch (err) {
+    next(err)
+  }
 })
+
 // Export
 module.exports = router
